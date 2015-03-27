@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -163,34 +163,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQC-Ns-S79">
-                                <rect key="frame" x="242" y="110" width="117" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Per-Xf-UMS"/>
-                                    <constraint firstAttribute="width" constant="117" id="S8g-7A-a0m"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Take Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePhotoButtonPressed:" destination="rwk-Zj-rJX" eventType="touchUpInside" id="WBM-OP-zEu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-2s-8Lf">
-                                <rect key="frame" x="260" y="424" width="81" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="IV2-X7-Mz5"/>
-                                    <constraint firstAttribute="height" constant="44" id="xyj-IL-Me5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitButtonPressed:" destination="rwk-Zj-rJX" eventType="touchUpInside" id="9vT-kG-ePq"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-rF-v8i">
                                 <rect key="frame" x="16" y="266" width="568" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,23 +181,36 @@
                                     <segue destination="gKr-EB-HjE" kind="unwind" unwindAction="unwindToViewController:" id="zy5-IW-eWJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-2s-8Lf">
+                                <rect key="frame" x="260" y="109" width="81" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="IV2-X7-Mz5"/>
+                                    <constraint firstAttribute="height" constant="44" id="xyj-IL-Me5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="rwk-Zj-rJX" eventType="touchUpInside" id="9vT-kG-ePq"/>
+                                    <segue destination="gKr-EB-HjE" kind="unwind" unwindAction="unwindToViewController:" id="OCs-8M-XSH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j3k-ro-Jar" firstAttribute="trailing" secondItem="1al-vC-TXL" secondAttribute="trailingMargin" id="3Ah-rw-v8C"/>
-                            <constraint firstAttribute="centerX" secondItem="jQC-Ns-S79" secondAttribute="centerX" id="66w-fo-XQC"/>
                             <constraint firstItem="0Zu-DJ-qlM" firstAttribute="top" secondItem="j3k-ro-Jar" secondAttribute="bottom" constant="2" id="9PI-QN-4dO"/>
-                            <constraint firstAttribute="centerX" secondItem="gh3-2s-8Lf" secondAttribute="centerX" id="BK2-qk-6Cw"/>
+                            <constraint firstAttribute="centerX" secondItem="gh3-2s-8Lf" secondAttribute="centerX" constant="-0.5" id="BK2-qk-6Cw"/>
                             <constraint firstAttribute="centerX" secondItem="j3k-ro-Jar" secondAttribute="centerX" id="JR9-Iq-kCW"/>
                             <constraint firstItem="Bwz-tp-G2r" firstAttribute="top" secondItem="gbo-rF-v8i" secondAttribute="bottom" constant="184" id="Lb0-lo-zlv"/>
                             <constraint firstAttribute="centerX" secondItem="gbo-rF-v8i" secondAttribute="centerX" id="PcF-ph-Sdv"/>
-                            <constraint firstItem="gh3-2s-8Lf" firstAttribute="top" secondItem="gbo-rF-v8i" secondAttribute="bottom" constant="8" id="WEx-rl-JwQ"/>
+                            <constraint firstItem="gh3-2s-8Lf" firstAttribute="top" secondItem="gbo-rF-v8i" secondAttribute="bottom" constant="-307" id="WEx-rl-JwQ"/>
                             <constraint firstItem="gbo-rF-v8i" firstAttribute="leading" secondItem="1al-vC-TXL" secondAttribute="leadingMargin" id="hrX-tx-y0B"/>
                             <constraint firstItem="0Zu-DJ-qlM" firstAttribute="leading" secondItem="1al-vC-TXL" secondAttribute="leadingMargin" id="jz8-qf-mzk"/>
                             <constraint firstItem="gbo-rF-v8i" firstAttribute="top" secondItem="0Zu-DJ-qlM" secondAttribute="bottom" constant="8" id="kiA-Ka-r95"/>
                             <constraint firstItem="gbo-rF-v8i" firstAttribute="trailing" secondItem="1al-vC-TXL" secondAttribute="trailingMargin" id="nEx-sf-HLa"/>
                             <constraint firstItem="j3k-ro-Jar" firstAttribute="leading" secondItem="1al-vC-TXL" secondAttribute="leadingMargin" id="sRt-Sh-prL"/>
-                            <constraint firstItem="j3k-ro-Jar" firstAttribute="top" secondItem="jQC-Ns-S79" secondAttribute="bottom" constant="50" id="zpi-3N-epY"/>
                         </constraints>
                     </view>
                     <connections>

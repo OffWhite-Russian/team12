@@ -2,25 +2,34 @@
 //  SaveIdeaViewController.swift
 //  AITPMobileApp
 //
-//  Created by Dan on 3/27/15.
+//  Created by team12 on 3/27/15.
 //  Copyright (c) 2015 Team 12. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 class SaveIdeaViewController: UIViewController {
 
     @IBOutlet weak var stockSymbolField: UITextField!
     @IBOutlet weak var stockDescriptionField: UITextView!
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate!).managedObjectContext
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Retreive the managedObjectContext from AppDelegate
+        
+        // Print it to the console
+        println(managedObjectContext!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+    
     }
     
 
@@ -36,6 +45,25 @@ class SaveIdeaViewController: UIViewController {
     
 
     @IBAction func submitButtonPressed(sender: AnyObject) {
+        
+        let entity =  NSEntityDescription.entityForName("Ideas",
+            inManagedObjectContext:
+            managedObjectContext!)
+        
+        let idea = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:managedObjectContext!)
+        
+        //3
+        var symbol = stockSymbolField.text
+        var description = stockDescriptionField.text
+        idea.setValue(symbol, forKey: "ideaname")
+        idea.setValue(description, forKey: "ideadetails")
+        //4
+        var error: NSError?
+        if !managedObjectContext!.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+        
     }
 
     @IBAction func takePhotoButtonPressed(sender: AnyObject) {

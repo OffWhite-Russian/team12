@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1D17056C-C420-41E8-AC4D-0A4B071F0F43</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AITPMobileApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>824BEAC9B5EF9F002C023DEB7A0CE3BC000CCE6B</key>
+		<string>https://github.com/OffWhite-Russian/team12.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AITPMobileApp/AITPMobileApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>824BEAC9B5EF9F002C023DEB7A0CE3BC000CCE6B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/OffWhite-Russian/team12.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>824BEAC9B5EF9F002C023DEB7A0CE3BC000CCE6B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>824BEAC9B5EF9F002C023DEB7A0CE3BC000CCE6B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AITPMobile</string>
+		</dict>
+	</array>
+</dict>
+</plist>

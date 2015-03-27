@@ -8,12 +8,15 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 class SaveIdeaViewController: UIViewController {
 
     @IBOutlet weak var stockSymbolField: UITextField!
     @IBOutlet weak var stockDescriptionField: UITextView!
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate!).managedObjectContext
+    let manager = CLLocationManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +26,9 @@ class SaveIdeaViewController: UIViewController {
         
         // Print it to the console
         println(managedObjectContext!)
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            manager.requestWhenInUseAuthorization()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +64,13 @@ class SaveIdeaViewController: UIViewController {
         var description = stockDescriptionField.text
         idea.setValue(symbol, forKey: "ideaname")
         idea.setValue(description, forKey: "ideadetails")
+        
+        var datetime = NSDate()
+        idea.setValue(datetime, forKey: "datetime")
+        
+        if(manager.location != nil){
+            
+        }
         //4
         var error: NSError?
         if !managedObjectContext!.save(&error) {
@@ -67,6 +80,12 @@ class SaveIdeaViewController: UIViewController {
     }
 
     @IBAction func takePhotoButtonPressed(sender: AnyObject) {
+    }
+    
+    func locationManager(manager: CLLocationManager!,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    {
+        manager.startUpdatingLocation()
     }
 
 }

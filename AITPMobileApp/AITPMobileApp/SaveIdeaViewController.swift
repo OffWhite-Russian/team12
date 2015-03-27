@@ -69,7 +69,10 @@ class SaveIdeaViewController: UIViewController {
         idea.setValue(datetime, forKey: "datetime")
         
         if(manager.location != nil){
-            
+            var gpslat: NSString = manager.location.coordinate.latitude.description
+            var gpslong: NSString = manager.location.coordinate.longitude.description
+            idea.setValue(gpslat, forKey: "gpslat")
+            idea.setValue(gpslong, forKey: "gpslong")
         }
         //4
         var error: NSError?
@@ -85,7 +88,10 @@ class SaveIdeaViewController: UIViewController {
     func locationManager(manager: CLLocationManager!,
         didChangeAuthorizationStatus status: CLAuthorizationStatus)
     {
-        manager.startUpdatingLocation()
+        if(CLLocationManager.locationServicesEnabled()){
+            manager.startUpdatingLocation()
+        }
+
     }
 
 }

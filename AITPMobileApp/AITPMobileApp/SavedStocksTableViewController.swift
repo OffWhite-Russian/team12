@@ -12,7 +12,11 @@ import CoreData
 
 
 class SavedStocksTableViewController: UITableViewController {
-
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate!).managedObjectContext
+    var i = 0
+    var result = NSArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +31,20 @@ class SavedStocksTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+
+        var request = NSFetchRequest()
+        let entity =  NSEntityDescription.entityForName("Ideas",
+            inManagedObjectContext:
+            managedObjectContext!)
+
+        var error = NSError()
+        let fetch:NSFetchRequest = NSFetchRequest(entityName: "Ideas")
+
+        result = managedObjectContext!.executeFetchRequest(fetch, error: nil) as [AITPMobileApp]
+        println(result)
     }
 
     // MARK: - Table view data source
@@ -43,15 +61,17 @@ class SavedStocksTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
-        // Configure the cell...
+        cell.textLabel!.text = (result[i] as AITPMobileApp).ideaname
+        
+        i++
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
